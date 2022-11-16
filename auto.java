@@ -15,7 +15,10 @@ public class auto {
         long date = new Date().getTime();
 
         obj newobj = new obj(str, n);
-
+        newobj.fun2();
+        // newobj.obj("", 33);这是错误的。
+        /* 《java核心技术I》p108 构造器总是结合new运算符来调用。不能对一个已存在的对象
+        调用构造器来达到重新设置实例字段的目的。*/
     }
     
 }
@@ -43,6 +46,11 @@ class obj{
         GregorianCalendar m = new GregorianCalendar();
         return year + "年" + month +"月" + day + "日" + m.get(Calendar.HOUR_OF_DAY) + "时";
         
+    }
+    public String fun2(){
+
+        return "";
+
     }
     // fun方法是一个私有方法，类外不可访问
 
