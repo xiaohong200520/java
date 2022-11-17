@@ -6,15 +6,19 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class auto {
-
+    
     public static final  Scanner in = new Scanner(System.in); 
     public static void main(String[] args) {
 
         String str = in.nextLine();
         int n = in.nextInt();
-        long date = new Date().getTime();
 
         obj newobj = new obj(str, n);
+        var newobj2 = new obj("gggg",99);
+        // 使用var关键词可以不必考虑变量的类型
+        var arr = new obj[3];
+        // 这里构造了一个obj数组，
+        arr[1] = new obj("ggh",44);
         newobj.fun2();
         // newobj.obj("", 33);这是错误的。
         /* 《java核心技术I》p108 构造器总是结合new运算符来调用。不能对一个已存在的对象
@@ -33,6 +37,10 @@ class obj{
         String name = n;
         int age = a;
 
+        if(name.equals("gghj")) 
+        System.out.println("yes");
+        else
+        System.out. println("no");
         System.out.printf("name：%s\n年龄：%d\n时间：%s", name, age, fun());
 
     }
@@ -40,8 +48,8 @@ class obj{
 
     private String fun(){
         LocalDate dh = LocalDate.now();
-        int year = dh.getYear();
-        int month = dh.getMonthValue();
+        int year = dh.getYear(); 
+        int month = dh.getMonthValue(); 
         int day = dh.getDayOfMonth();
         GregorianCalendar m = new GregorianCalendar();
         return year + "年" + month +"月" + day + "日" + m.get(Calendar.HOUR_OF_DAY) + "时";
